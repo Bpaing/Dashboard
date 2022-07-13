@@ -4,6 +4,7 @@
     --tinted-white: #EFF6FF;
     --secondary: #0EA5E9;
     --card-accent: #e9520e;
+    --card-text: #767676;
 }
 
 * {
@@ -30,9 +31,21 @@ h5 {
     line-height: 1.5rem;
 }
 
+h6 {
+    font-size: .8rem;
+}
+
+.trending h6 {
+    font-weight: normal;
+    line-height: 1.25rem;
+}
+
 p {
     font-size: .8rem;
-    line-height: 1.1rem;
+}
+
+.announcements p {
+    font-size: .7rem;
 }
 
 ul {
@@ -78,9 +91,10 @@ ul {
 }
 
 .header .search,
-.header .user,
+.header .profile,
 .header .greeting,
-.header .buttons {
+.header .buttons,
+.trending .user {
     display:flex;
     align-items: center;
     gap: 20px;
@@ -99,11 +113,11 @@ ul {
     padding: 0.25rem 1rem;
 }
 
-.header .user {
+.header .profile {
     justify-content: flex-end;
 }
 
-.header .user h3 {
+.header .profile h3 {
     font-size: 1rem;
 }
 
@@ -127,17 +141,17 @@ ul {
     text-align: center;
 }
 
-.profile {
-    height:4rem;
+.icon {
     width:auto;
     border-radius:2rem;
 }
 
-.greeting .profile {
+.greeting .icon {
     height: 4rem;
 }
 
-.user .profile {
+.profile .icon,
+.user .icon {
     height: 2.5rem;
 }
 
@@ -176,6 +190,10 @@ ul {
     box-shadow: 0px 3px 10px rgb(0, 0, 0, .5);
 }
 
+.card p {
+    color: var(--card-text);
+}
+
 ul .card-button {
     display:flex;
     justify-content: flex-end;
@@ -185,4 +203,20 @@ ul .card-button {
 
 .projects .card {
     border-left: 0.5rem solid var(--card-accent);
+}
+
+.announcements ul,
+.trending ul {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.announcements li {
+    margin: .75rem 0px;
+}
+
+.trending li {
+    margin: 1rem 10%;
 }
